@@ -11,8 +11,7 @@ Depending on the level the range decreases by half every level
 In addition the function also includes a variable that counts the number
 the player can attempt to guess the number before losing
 '''
-def randomizer(lvl_num):
-    global lives
+def randomizer(lvl_num, lives):
     if lvl == 0:
         pass
     elif lvl == 1:
@@ -90,8 +89,9 @@ Starts the game!
 '''                          
 def complete_all_levels():
     global lvl
+    global lives
     while lvl < 3:
-        guess_the_number(randomizer(lvl_num))
+        guess_the_number(randomizer(lvl_num, lives))
         lvl += 1
         if lvl == 3:
             y_or_n = input("Would you like to play again! \nPress Yes(y) to 'continue' or No(n) to 'exit': ")
