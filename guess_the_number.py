@@ -12,6 +12,7 @@ In addition the function also includes a variable that counts the number
 the player can attempt to guess the number before losing
 '''
 def randomizer(lvl_num):
+    global lives
     if lvl == 0:
         pass
     elif lvl == 1:
