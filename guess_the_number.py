@@ -11,7 +11,7 @@ Depending on the level the range decreases by half every level
 In addition the function also includes a variable that counts the number
 the player can attempt to guess the number before losing
 '''
-def randomizer(lvl_num, lives):
+def randomizer(lvl_num):
     if lvl == 0:
         pass
     elif lvl == 1:
@@ -59,7 +59,7 @@ The main function of the guessing game, the results from the randomizer function
 the guess_the_number and split into variables for comparison to the number generated
 '''
 def guess_the_number(randomizer):
-    attempts = 0
+    global attempts
     usr_num = randomizer[1]
     rnd_num = randomizer[0]
     lives = randomizer[2]
@@ -90,7 +90,7 @@ Starts the game!
 def complete_all_levels():
     global lvl
     while lvl < 3:
-        guess_the_number(randomizer(lvl_num, lives))
+        guess_the_number(randomizer(lvl_num))
         lvl += 1
         if lvl == 3:
             y_or_n = input("Would you like to play again! \nPress Yes(y) to 'continue' or No(n) to 'exit': ")
